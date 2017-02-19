@@ -1,0 +1,238 @@
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "book_genres" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "genre_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.7ms)[0m  [1mCREATE  INDEX "index_book_genres_on_book_id" ON "book_genres" ("book_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_book_genres_on_book_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_book_genres_on_book_id' AND type='index'
+
+  [1m[36m (0.7ms)[0m  [1mCREATE  INDEX "index_book_genres_on_genre_id" ON "book_genres" ("genre_id")[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "author" varchar, "description" text, "amazon_id" varchar, "created_at" datetime, "updated_at" datetime, "rating" integer, "finished_on" date, "keywords" text) 
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "genres" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140515201924')[0m
+  [1m[35m (1.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140515182944')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140515184024')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140515184357')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140515191707')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140515200114')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140515200356')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140515201144')
+  [1m[36m (1.6ms)[0m  [1mCREATE TABLE "book_genres" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "genre_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (2.3ms)[0m  [1mCREATE  INDEX "index_book_genres_on_book_id" ON "book_genres" ("book_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_book_genres_on_book_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_book_genres_on_book_id' AND type='index'
+
+  [1m[36m (0.6ms)[0m  [1mCREATE  INDEX "index_book_genres_on_genre_id" ON "book_genres" ("genre_id")[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "author" varchar, "description" text, "amazon_id" varchar, "created_at" datetime, "updated_at" datetime, "rating" integer, "finished_on" date, "keywords" text) 
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "genres" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140515201924')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140515182944')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140515184024')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140515184357')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140515191707')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140515200114')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140515200356')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140515201144')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books"
+  [1m[36mGenre Load (0.1ms)[0m  [1mSELECT "genres".* FROM "genres"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Fiction"], ["created_at", "2017-02-19 22:11:21.144509"], ["updated_at", "2017-02-19 22:11:21.144509"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Apple"], ["created_at", "2017-02-19 22:11:21.150033"], ["updated_at", "2017-02-19 22:11:21.150033"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Non-Fiction"], ["created_at", "2017-02-19 22:11:21.151749"], ["updated_at", "2017-02-19 22:11:21.151749"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "books" ("title", "author", "description", "amazon_id", "rating", "finished_on", "keywords", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Hyperion"], ["author", "Dan Simmons"], ["description", "Probably my favorite science fiction book (and series) I've ever read. Hyperion is written in a style similar to The Canterbury Tales, in which a series of stories are told by the main characters. Each story is a gem in itself, but alude to the larger storyline. The scope of the story is ambitious - spanning time, planets religion and love."], ["amazon_id", "0553283685"], ["rating", 5], ["finished_on", "2017-02-09"], ["keywords", "hyperion dan simmons probably my favorite science fiction book (and series) i've ever read. hyperion is written in a style similar to the canterbury tales, in which a series of stories are told by the main characters. each story is a gem in itself, but alude to the larger storyline. the scope of the story is ambitious - spanning time, planets religion and love."], ["created_at", "2017-02-19 22:11:21.193325"], ["updated_at", "2017-02-19 22:11:21.193325"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "book_genres" ("genre_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["genre_id", 1], ["book_id", 1], ["created_at", "2017-02-19 22:11:21.207439"], ["updated_at", "2017-02-19 22:11:21.207439"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "books" ("title", "author", "description", "amazon_id", "rating", "finished_on", "keywords", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Jony Ive: The Genius Behind Apple's Greatest Products"], ["author", "Leander Kahney"], ["description", "Even though I respect Ive, I felt this biography only hit skin deep. It went over all the major events in his life, his passion for design, awards he achieved -- but that's really it. I dont't feel I know him anymore than before reading this."], ["amazon_id", "159184617X"], ["rating", 4], ["finished_on", "2017-02-18"], ["keywords", "jony ive: the genius behind apple's greatest products leander kahney even though i respect ive, i felt this biography only hit skin deep. it went over all the major events in his life, his passion for design, awards he achieved -- but that's really it. i dont't feel i know him anymore than before reading this."], ["created_at", "2017-02-19 22:11:21.211497"], ["updated_at", "2017-02-19 22:11:21.211497"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "book_genres" ("genre_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["genre_id", 3], ["book_id", 2], ["created_at", "2017-02-19 22:11:21.212526"], ["updated_at", "2017-02-19 22:11:21.212526"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "book_genres" ("genre_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["genre_id", 2], ["book_id", 2], ["created_at", "2017-02-19 22:11:21.213286"], ["updated_at", "2017-02-19 22:11:21.213286"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "books" ("title", "author", "description", "amazon_id", "rating", "keywords", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Mindstorms"], ["author", "Seymour A. Papert"], ["description", "Although this book focuses on the cognitive advantages to having children use technology from an early age, it is also an in depth look at how people can learn for themseves. As someone who was often distracted and bored at times during school, Mindstorms highlights some of the reasoning behind that feeling and what we can do as teachers to help minimize it."], ["amazon_id", "0465046746"], ["rating", 1], ["keywords", "mindstorms seymour a. papert although this book focuses on the cognitive advantages to having children use technology from an early age, it is also an in depth look at how people can learn for themseves. as someone who was often distracted and bored at times during school, mindstorms highlights some of the reasoning behind that feeling and what we can do as teachers to help minimize it."], ["created_at", "2017-02-19 22:11:21.216134"], ["updated_at", "2017-02-19 22:11:21.216134"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "book_genres" ("genre_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["genre_id", 3], ["book_id", 3], ["created_at", "2017-02-19 22:11:21.217077"], ["updated_at", "2017-02-19 22:11:21.217077"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "books"
+
+
+Started GET "/" for ::1 at 2017-02-19 14:11:46 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#index as HTML
+  [1m[35mGenre Load (0.1ms)[0m  SELECT "genres".* FROM "genres"
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  [1m[35mBookGenre Load (0.2ms)[0m  SELECT "book_genres".* FROM "book_genres" WHERE "book_genres"."book_id" IN (1, 2, 3)
+  [1m[36mGenre Load (0.2ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 3, 2)[0m
+  Rendered books/_book.html.erb (1.9ms)
+  Rendered books/index.html.erb within layouts/application (65.1ms)
+Completed 200 OK in 1201ms (Views: 1184.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/books.css?body=1" for ::1 at 2017-02-19 14:11:47 -0800
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-02-19 14:11:47 -0800
+
+
+Started GET "/assets/bootstrap.css?body=1" for ::1 at 2017-02-19 14:11:47 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-02-19 14:11:47 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-02-19 14:11:47 -0800
+
+
+Started GET "/assets/books.js?body=1" for ::1 at 2017-02-19 14:11:47 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-02-19 14:11:47 -0800
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-02-19 14:11:47 -0800
+
+
+Started POST "/books" for ::1 at 2017-02-19 14:12:36 -0800
+Processing by BooksController#create as JS
+  Parameters: {"utf8"=>"✓", "book"=>{"genre_ids"=>["1"], "title"=>"the great excape", "author"=>"me", "description"=>"asd", "amazon_id"=>"", "rating"=>"2"}, "commit"=>"Create Book"}
+  [1m[35mGenre Load (0.2ms)[0m  SELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "books" ("title", "author", "description", "amazon_id", "rating", "keywords", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["title", "the great excape"], ["author", "me"], ["description", "asd"], ["amazon_id", ""], ["rating", 2], ["keywords", "the great excape me asd"], ["created_at", "2017-02-19 22:12:36.374658"], ["updated_at", "2017-02-19 22:12:36.374658"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "book_genres" ("genre_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["genre_id", 1], ["book_id", 4], ["created_at", "2017-02-19 22:12:36.376464"], ["updated_at", "2017-02-19 22:12:36.376464"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  Rendered books/_book.html.erb (1.1ms)
+  Rendered books/create.js.erb (2.7ms)
+Completed 200 OK in 18ms (Views: 6.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/?keyword=Hyperion" for ::1 at 2017-02-19 14:12:53 -0800
+Processing by BooksController#index as HTML
+  Parameters: {"keyword"=>"Hyperion"}
+  [1m[36mGenre Load (0.1ms)[0m  [1mSELECT "genres".* FROM "genres"[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE (keywords LIKE '%hyperion%')
+  [1m[36mBookGenre Load (0.1ms)[0m  [1mSELECT "book_genres".* FROM "book_genres" WHERE "book_genres"."book_id" IN (1)[0m
+  [1m[35mGenre Load (0.1ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1)
+  Rendered books/_book.html.erb (0.5ms)
+  Rendered books/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 30ms (Views: 28.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/books.css?body=1" for ::1 at 2017-02-19 14:12:53 -0800
+
+
+Started GET "/assets/bootstrap.css?body=1" for ::1 at 2017-02-19 14:12:53 -0800
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-02-19 14:12:53 -0800
+
+
+Started GET "/books?filter=Apple" for ::1 at 2017-02-19 14:13:04 -0800
+Processing by BooksController#index as HTML
+  Parameters: {"filter"=>"Apple"}
+  [1m[36mGenre Load (0.1ms)[0m  [1mSELECT "genres".* FROM "genres"[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "books"."id" AS t0_r0, "books"."title" AS t0_r1, "books"."author" AS t0_r2, "books"."description" AS t0_r3, "books"."amazon_id" AS t0_r4, "books"."created_at" AS t0_r5, "books"."updated_at" AS t0_r6, "books"."rating" AS t0_r7, "books"."finished_on" AS t0_r8, "books"."keywords" AS t0_r9, "genres"."id" AS t1_r0, "genres"."name" AS t1_r1, "genres"."created_at" AS t1_r2, "genres"."updated_at" AS t1_r3 FROM "books" INNER JOIN "book_genres" ON "book_genres"."book_id" = "books"."id" INNER JOIN "genres" ON "genres"."id" = "book_genres"."genre_id" WHERE (genres.name = 'Apple')
+  Rendered books/_book.html.erb (1.0ms)
+  Rendered books/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 51ms (Views: 49.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books?filter=Non-Fiction" for ::1 at 2017-02-19 14:13:05 -0800
+Processing by BooksController#index as HTML
+  Parameters: {"filter"=>"Non-Fiction"}
+  [1m[36mGenre Load (0.1ms)[0m  [1mSELECT "genres".* FROM "genres"[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "books"."id" AS t0_r0, "books"."title" AS t0_r1, "books"."author" AS t0_r2, "books"."description" AS t0_r3, "books"."amazon_id" AS t0_r4, "books"."created_at" AS t0_r5, "books"."updated_at" AS t0_r6, "books"."rating" AS t0_r7, "books"."finished_on" AS t0_r8, "books"."keywords" AS t0_r9, "genres"."id" AS t1_r0, "genres"."name" AS t1_r1, "genres"."created_at" AS t1_r2, "genres"."updated_at" AS t1_r3 FROM "books" INNER JOIN "book_genres" ON "book_genres"."book_id" = "books"."id" INNER JOIN "genres" ON "genres"."id" = "book_genres"."genre_id" WHERE (genres.name = 'Non-Fiction')
+  Rendered books/_book.html.erb (0.7ms)
+  Rendered books/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 31ms (Views: 30.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/books?filter=Fiction" for ::1 at 2017-02-19 14:13:07 -0800
+Processing by BooksController#index as HTML
+  Parameters: {"filter"=>"Fiction"}
+  [1m[36mGenre Load (0.1ms)[0m  [1mSELECT "genres".* FROM "genres"[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "books"."id" AS t0_r0, "books"."title" AS t0_r1, "books"."author" AS t0_r2, "books"."description" AS t0_r3, "books"."amazon_id" AS t0_r4, "books"."created_at" AS t0_r5, "books"."updated_at" AS t0_r6, "books"."rating" AS t0_r7, "books"."finished_on" AS t0_r8, "books"."keywords" AS t0_r9, "genres"."id" AS t1_r0, "genres"."name" AS t1_r1, "genres"."created_at" AS t1_r2, "genres"."updated_at" AS t1_r3 FROM "books" INNER JOIN "book_genres" ON "book_genres"."book_id" = "books"."id" INNER JOIN "genres" ON "genres"."id" = "book_genres"."genre_id" WHERE (genres.name = 'Fiction')
+  Rendered books/_book.html.erb (0.7ms)
+  Rendered books/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 49ms (Views: 48.3ms | ActiveRecord: 0.3ms)
+  [1m[36m (2.9ms)[0m  [1mDROP TABLE "book_genres"[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "book_genres" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "genre_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  CREATE  INDEX "index_book_genres_on_book_id" ON "book_genres" ("book_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_book_genres_on_book_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_book_genres_on_book_id' AND type='index'
+[0m
+  [1m[35m (0.6ms)[0m  CREATE  INDEX "index_book_genres_on_genre_id" ON "book_genres" ("genre_id")
+  [1m[36m (0.7ms)[0m  [1mDROP TABLE "books"[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "author" varchar, "description" text, "amazon_id" varchar, "created_at" datetime, "updated_at" datetime, "rating" integer, "finished_on" date, "keywords" text) 
+  [1m[36m (0.5ms)[0m  [1mDROP TABLE "genres"[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "genres" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  DROP TABLE "book_genres"
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "book_genres" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "genre_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.5ms)[0m  [1mCREATE  INDEX "index_book_genres_on_book_id" ON "book_genres" ("book_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_book_genres_on_book_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_book_genres_on_book_id' AND type='index'
+
+  [1m[36m (0.5ms)[0m  [1mCREATE  INDEX "index_book_genres_on_genre_id" ON "book_genres" ("genre_id")[0m
+  [1m[35m (0.5ms)[0m  DROP TABLE "books"
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "author" varchar, "description" text, "amazon_id" varchar, "created_at" datetime, "updated_at" datetime, "rating" integer, "finished_on" date, "keywords" text) [0m
+  [1m[35m (0.5ms)[0m  DROP TABLE "genres"
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "genres" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.4ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books"
+  [1m[36mGenre Load (0.2ms)[0m  [1mSELECT "genres".* FROM "genres"[0m
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Fiction"], ["created_at", "2017-02-19 22:14:47.865012"], ["updated_at", "2017-02-19 22:14:47.865012"]]
+  [1m[35m (2.2ms)[0m  commit transaction
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Apple"], ["created_at", "2017-02-19 22:14:47.872736"], ["updated_at", "2017-02-19 22:14:47.872736"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Non-Fiction"], ["created_at", "2017-02-19 22:14:47.874615"], ["updated_at", "2017-02-19 22:14:47.874615"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "books" ("title", "author", "description", "amazon_id", "rating", "finished_on", "keywords", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Hyperion"], ["author", "Dan Simmons"], ["description", "Probably my favorite science fiction book (and series) I've ever read. Hyperion is written in a style similar to The Canterbury Tales, in which a series of stories are told by the main characters. Each story is a gem in itself, but alude to the larger storyline. The scope of the story is ambitious - spanning time, planets religion and love."], ["amazon_id", "0553283685"], ["rating", 5], ["finished_on", "2017-02-09"], ["keywords", "hyperion dan simmons probably my favorite science fiction book (and series) i've ever read. hyperion is written in a style similar to the canterbury tales, in which a series of stories are told by the main characters. each story is a gem in itself, but alude to the larger storyline. the scope of the story is ambitious - spanning time, planets religion and love."], ["created_at", "2017-02-19 22:14:47.915334"], ["updated_at", "2017-02-19 22:14:47.915334"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "book_genres" ("genre_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["genre_id", 1], ["book_id", 1], ["created_at", "2017-02-19 22:14:47.916796"], ["updated_at", "2017-02-19 22:14:47.916796"]]
+  [1m[35m (2.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "books" ("title", "author", "description", "amazon_id", "rating", "finished_on", "keywords", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Jony Ive: The Genius Behind Apple's Greatest Products"], ["author", "Leander Kahney"], ["description", "Even though I respect Ive, I felt this biography only hit skin deep. It went over all the major events in his life, his passion for design, awards he achieved -- but that's really it. I dont't feel I know him anymore than before reading this."], ["amazon_id", "159184617X"], ["rating", 4], ["finished_on", "2017-02-18"], ["keywords", "jony ive: the genius behind apple's greatest products leander kahney even though i respect ive, i felt this biography only hit skin deep. it went over all the major events in his life, his passion for design, awards he achieved -- but that's really it. i dont't feel i know him anymore than before reading this."], ["created_at", "2017-02-19 22:14:47.932045"], ["updated_at", "2017-02-19 22:14:47.932045"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "book_genres" ("genre_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["genre_id", 3], ["book_id", 2], ["created_at", "2017-02-19 22:14:47.933632"], ["updated_at", "2017-02-19 22:14:47.933632"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "book_genres" ("genre_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["genre_id", 2], ["book_id", 2], ["created_at", "2017-02-19 22:14:47.934604"], ["updated_at", "2017-02-19 22:14:47.934604"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "books" ("title", "author", "description", "amazon_id", "rating", "keywords", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Mindstorms"], ["author", "Seymour A. Papert"], ["description", "Although this book focuses on the cognitive advantages to having children use technology from an early age, it is also an in depth look at how people can learn for themseves. As someone who was often distracted and bored at times during school, Mindstorms highlights some of the reasoning behind that feeling and what we can do as teachers to help minimize it."], ["amazon_id", "0465046746"], ["rating", 1], ["keywords", "mindstorms seymour a. papert although this book focuses on the cognitive advantages to having children use technology from an early age, it is also an in depth look at how people can learn for themseves. as someone who was often distracted and bored at times during school, mindstorms highlights some of the reasoning behind that feeling and what we can do as teachers to help minimize it."], ["created_at", "2017-02-19 22:14:47.937722"], ["updated_at", "2017-02-19 22:14:47.937722"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "book_genres" ("genre_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["genre_id", 3], ["book_id", 3], ["created_at", "2017-02-19 22:14:47.938672"], ["updated_at", "2017-02-19 22:14:47.938672"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "books"
